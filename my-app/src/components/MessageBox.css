@@ -1,0 +1,25 @@
+.message-box{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.user-message{
+    color: dimgray;
+    background-color: cornflowerblue;
+    max-width: 70%;
+    width: fit-content;
+    padding: clamp(6px, 1vw, 16px);
+    border-radius: 5px;
+    margin-left: auto;
+}
+
+.assistant-message{
+    color: black;
+    background-color: gray;
+    max-width: 70%;
+    width: fit-content;
+    padding: clamp(6px, 1vw, 16px);
+    border-radius: 5px;
+    margin-right: auto;
+}
