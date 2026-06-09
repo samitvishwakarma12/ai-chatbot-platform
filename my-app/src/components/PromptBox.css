@@ -1,0 +1,21 @@
+.prompt-box {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+    display: flex;
+    padding: 10px;
+    box-sizing: border-box;
+    gap: 10px;
+}
+
+.prompt-box textarea {
+    flex: 1;      /* takes remaining space */
+    min-width: 0; /* prevents overflow */
+}
+
+.prompt-box button {
+    width: 100px; /* fixed width */
+    flex-shrink: 0;
+}
