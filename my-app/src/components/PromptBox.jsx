@@ -45,6 +45,7 @@ function PromptBox({ setMessages }) {
       <textarea
         value={prompt}
         onChange={(e) => setPrompt(e.target.value)}
+        placeholder="  Your prompt goes here..."
       />
 
       <button onClick={sendPrompt}>

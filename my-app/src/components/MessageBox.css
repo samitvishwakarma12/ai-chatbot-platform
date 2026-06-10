@@ -1,26 +1,26 @@
 .message-box{
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    padding-bottom: 105px;
+    gap: 20gpx;
+    padding: 0 clamp(20px, 3vw, 50px) 105px;
 }
 
 .user-message{
-    color: dimgray;
-    background-color: cornflowerblue;
+    color: rgb(255, 255, 255);
+    background: linear-gradient(135deg, rgb(153, 154, 239), rgb(132, 178, 242), rgb(35, 129, 222));
     max-width: 70%;
     width: fit-content;
     padding: clamp(6px, 1vw, 16px);
-    border-radius: 5px;
+    border-radius: 20px;
     margin-left: auto;
 }
 
 .assistant-message{
-    color: black;
-    background-color: gray;
+    color: rgb(255, 255, 255);
+    background: linear-gradient(135deg, rgb(124, 124, 124), rgb(78, 78, 78), rgb(43, 43, 43));
     max-width: 70%;
     width: fit-content;
     padding: clamp(6px, 1vw, 16px);
-    border-radius: 5px;
+    border-radius: 25px;
     margin-right: auto;
 }

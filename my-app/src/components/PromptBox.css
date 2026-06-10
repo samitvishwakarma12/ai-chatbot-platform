@@ -13,9 +13,15 @@
 }
 
 .prompt-box textarea {
-    flex: 1;      /* takes remaining space */
-    min-width: 0; /* prevents overflow */
+    flex: 1;     
+    min-width: 0;
     margin: 0 auto;
+    border-radius: clamp(5px, 2vw, 50px);
+    border: 1px gray solid;
+}
+
+.prompt-box textarea:focus{
+    border: 2px plum solid;
 }
 
 .prompt-box button {
