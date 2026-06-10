@@ -1,4 +1,4 @@
-import "./MessageBox.css"
+import "./component-styles/MessageBox.css"
 
 function MessageBox({ messages }) {
   return (

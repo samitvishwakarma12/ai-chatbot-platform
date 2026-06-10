@@ -1,8 +1,9 @@
 import { useState } from "react";
-import "./PromptBox.css"
+import "./component-styles/PromptBox.css"
 
 function PromptBox({ setMessages }) {
   const [prompt, setPrompt] = useState("");
+  const [loading, setLoading] = useState(false)
 
   async function sendPrompt() {
     try {
@@ -16,6 +17,8 @@ function PromptBox({ setMessages }) {
       ])
 
       setPrompt("");
+
+      setLoading(true);
 
       const res = await fetch("http://127.0.0.1:8000/generate", {
         method: "POST",

@@ -1,7 +1,7 @@
 import { useState } from "react";
-import PromptBox from "./components/PromptBox";
-import MessageBox from "./components/MessageBox";
-import NavBar from "./components/NavBar";
+import PromptBox from "./chat/PromptBox";
+import MessageBox from "./chat/MessageBox";
+import NavBar from "./chat/NavBar";
 import "./App.css"
 
 function App() {
