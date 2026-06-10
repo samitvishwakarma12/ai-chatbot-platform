@@ -1,6 +1,7 @@
 import { useState } from "react";
 import PromptBox from "./components/PromptBox";
 import MessageBox from "./components/MessageBox";
+import NavBar from "./components/NavBar";
 import "./App.css"
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
 
   return (
     <div className="app">
+      <NavBar/>
       <PromptBox
         messages={messages}
         setMessages={setMessages}
