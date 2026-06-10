@@ -11,7 +11,6 @@ function App() {
     <div className="app">
       <NavBar/>
       <PromptBox
-        messages={messages}
         setMessages={setMessages}
       />
       <MessageBox messages={messages} />

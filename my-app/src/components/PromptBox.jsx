@@ -1,29 +1,41 @@
 import { useState } from "react";
 import "./PromptBox.css"
 
-function PromptBox({ messages, setMessages }) {
+function PromptBox({ setMessages }) {
   const [prompt, setPrompt] = useState("");
 
   async function sendPrompt() {
     try {
+      const currentPrompt = prompt
+
+
+      setMessages((prev) => [
+        ...prev,
+        { role: "user", text: currentPrompt }
+      
+      ])
+
+      setPrompt("");
+
       const res = await fetch("http://127.0.0.1:8000/generate", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ prompt }),
+        body: JSON.stringify({ "prompt": currentPrompt }),
       });
+
+      
 
       const data = await res.json();
 
       setMessages((prev) => [
         ...prev,
-        { role: "user", text: prompt },
-        { role: "assistant", text: data.response },
-      ]);
-
-      setPrompt("");
-    } catch (err) {
+        { role: "assistant", text: data.response }
+      ])
+    } 
+    
+    catch (err) {
       console.error("fetch failed:", err);
     }
   }
