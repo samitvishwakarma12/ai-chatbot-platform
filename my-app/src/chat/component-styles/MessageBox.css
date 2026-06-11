@@ -1,7 +1,7 @@
 .message-box{
     display: flex;
     flex-direction: column;
-    gap: 20gpx;
+    gap: 20px;
     padding: 0 clamp(20px, 3vw, 50px) 105px;
 }
 
@@ -13,6 +13,7 @@
     padding: clamp(6px, 1vw, 16px);
     border-radius: 20px;
     margin-left: auto;
+    animation: assistantMessageIn 0.25s ease-out;
 }
 
 .assistant-message{
@@ -23,4 +24,27 @@
     padding: clamp(6px, 1vw, 16px);
     border-radius: 25px;
     margin-right: auto;
+    animation: assistantMessageIn 0.25s ease-out;
+}
+
+@keyframes userMessageIn {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes assistantMessageIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }

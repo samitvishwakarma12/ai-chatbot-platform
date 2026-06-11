@@ -10,6 +10,7 @@
     gap: 10px;
     padding: 10px;
     box-sizing: border-box;
+    transition: all ease-in-out 0.5s;
 }
 
 .prompt-box textarea {
@@ -18,20 +19,33 @@
     margin: 0 auto;
     border-radius: clamp(5px, 2vw, 50px);
     border: 1px gray solid;
+    transition: all ease-in-out 0.5s;
 }
 
 .prompt-box textarea:focus{
-    border: 2px plum solid;
+    border: 1px plum solid;
+    transform: scale(1.02) translateY(-5px);
+    box-shadow: 0 0 0 3px rgba(221, 160, 221, 0.15);
+}
+
+.prompt-box textarea:hover{
+    border: 1px lightslategray solid;
+    transform: scale(1.02) translateY(-5px);
+    box-shadow: 0 0 0 3px rgba(221, 160, 221, 0.15);
 }
 
 .prompt-box button {
-    width: 100px; /* fixed width */
+    width: 100px;
     flex-shrink: 0;
     background-color: antiquewhite;
     color: black;
     border-radius: 50px;
+    transition: all ease-in-out 0.5s;
+
 }
 
 .prompt-box button:hover{
     background-color: aliceblue;
+    transform: scale(1.02) translateY(-5px);
+    box-shadow: 0 0 0 3px rgba(221, 160, 221, 0.15);
 }
