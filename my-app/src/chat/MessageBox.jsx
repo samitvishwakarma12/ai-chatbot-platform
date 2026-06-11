@@ -1,13 +1,15 @@
-import { useState } from "react";
 import "./component-styles/MessageBox.css";
+import LoadingAnimation from "./LoadingAnimation";
 
 
 
-function MessageBox({ messages }){
+function MessageBox({ messages, loading }){
 
 
 
   return (
+
+
 
     <div className="message-box">
 
@@ -19,8 +21,14 @@ function MessageBox({ messages }){
         >
           <strong>{msg.role}:</strong> {msg.text}
         </p>
-        
       ))}
+      {loading && (
+        <div
+          className="assistant-message">
+            <strong>Assistant:</strong> <LoadingAnimation/>
+        </div>
+      )}
+
 
     </div>
   );

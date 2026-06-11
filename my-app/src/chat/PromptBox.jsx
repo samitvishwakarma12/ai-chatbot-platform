@@ -3,8 +3,17 @@ import "./component-styles/PromptBox.css";
 import handlePrompt from "./hooks/handlePrompt";
 
 
-function PromptBox({ setMessages }){
+function PromptBox({ setMessages, setLoading }){
 
+  async function handlePromptSubmit(){
+    try{
+      setLoading(true);
+      await handlePrompt(prompt, setPrompt, setMessages);
+    }
+    finally{
+      setLoading(false);
+    }
+  }
 
 
   const [prompt, setPrompt] = useState("");
@@ -17,7 +26,7 @@ function PromptBox({ setMessages }){
         placeholder="  Your prompt goes here..."
       />
 
-      <button onClick={async () => handlePrompt(prompt, setPrompt, setMessages)}>
+      <button onClick={async () => handlePromptSubmit()}>
         Send
       </button>
     </div>
