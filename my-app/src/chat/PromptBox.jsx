@@ -1,47 +1,13 @@
 import { useState } from "react";
-import "./component-styles/PromptBox.css"
+import "./component-styles/PromptBox.css";
+import handlePrompt from "./hooks/handlePrompt";
 
-function PromptBox({ setMessages }) {
+
+function PromptBox({ setMessages }){
+
+
+
   const [prompt, setPrompt] = useState("");
-  const [loading, setLoading] = useState(false)
-
-  async function sendPrompt() {
-    try {
-      const currentPrompt = prompt
-
-
-      setMessages((prev) => [
-        ...prev,
-        { role: "user", text: currentPrompt }
-      
-      ])
-
-      setPrompt("");
-
-      setLoading(true);
-
-      const res = await fetch("http://127.0.0.1:8000/generate", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ "prompt": currentPrompt }),
-      });
-
-      
-
-      const data = await res.json();
-
-      setMessages((prev) => [
-        ...prev,
-        { role: "assistant", text: data.response }
-      ])
-    } 
-    
-    catch (err) {
-      console.error("fetch failed:", err);
-    }
-  }
 
   return (
     <div className="prompt-box">
@@ -51,11 +17,13 @@ function PromptBox({ setMessages }) {
         placeholder="  Your prompt goes here..."
       />
 
-      <button onClick={sendPrompt}>
+      <button onClick={async () => handlePrompt(prompt, setPrompt, setMessages)}>
         Send
       </button>
     </div>
   );
 }
+
+
 
 export default PromptBox;

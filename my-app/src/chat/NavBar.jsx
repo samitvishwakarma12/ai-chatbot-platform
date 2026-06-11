@@ -1,6 +1,11 @@
 import "./component-styles/NavBar.css"
 
+
+
 function NavBar(){
+
+
+
     return (
         <nav className="nav-bar">
             <div className="nav-bar-left">
@@ -13,5 +18,7 @@ function NavBar(){
         </nav>
     )
 }
+
+
 
 export default NavBar
