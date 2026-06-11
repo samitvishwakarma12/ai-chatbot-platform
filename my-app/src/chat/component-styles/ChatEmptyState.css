@@ -1,0 +1,16 @@
+.chat-empty-state{
+    margin: 0 auto;
+}
+
+.chat-empty-state ul{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+}
+
+.chat-empty-state button{
+    background: none;
+    border: 1px solid whitesmoke;
+    border-radius: 30px;
+}

@@ -3,11 +3,12 @@ import "./component-styles/PromptBox.css";
 import handlePrompt from "./hooks/handlePrompt";
 
 
-function PromptBox({ setMessages, setLoading }){
+function PromptBox({ setMessages, setLoading, setEmptyChatState }){
 
   async function handlePromptSubmit(){
     try{
       setLoading(true);
+      setEmptyChatState(false);
       await handlePrompt(prompt, setPrompt, setMessages);
     }
     finally{
