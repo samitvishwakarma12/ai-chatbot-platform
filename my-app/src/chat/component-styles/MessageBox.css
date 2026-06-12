@@ -27,6 +27,13 @@
     animation: assistantMessageIn 0.25s ease-out;
 }
 
+.user-message,
+.assistant-message {
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+}
+
 @keyframes userMessageIn {
     from {
         opacity: 0;
