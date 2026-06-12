@@ -26,7 +26,7 @@ async function sendPrompt(prompt){
 
     try {
 
-      const response = await fetch("http://127.0.0.1:8000/generate", {
+      const response = await fetch(`${import.meta.env.VITE_DEMO_CHATBOT_BACKEND}/generate`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
