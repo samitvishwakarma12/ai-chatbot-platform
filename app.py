@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
-import requests
 from fastapi.middleware.cors import CORSMiddleware
+import asyncio
 
 app = FastAPI()
 
@@ -19,19 +19,15 @@ class PromptRequest(BaseModel):
 @app.post("/generate")
 async def generate(request: PromptRequest):
 
-    response = requests.post(
-        "http://172.20.192.1:11434/api/generate",
-        json={
-            "model": "llama3",
-            "prompt": request.prompt,
-            "stream": False
-        }
-    )
-
-    result = response.json()
+    # simulate AI latency
+    await asyncio.sleep(2)
 
     return {
-        "response": result["response"]
+        "response": (
+            f"Demo response: I received '{request.prompt}'. "
+            "This backend simulates an LLM API for portfolio demonstration purposes. "
+            "Refer to the README for running a real local LLM version."
+        )
     }
 
 if __name__ == "__main__":
@@ -39,7 +35,7 @@ if __name__ == "__main__":
 
     uvicorn.run(
         app,
-        host="127.0.0.1",
+        host="0.0.0.0",
         port=8000,
         reload=False
     )
