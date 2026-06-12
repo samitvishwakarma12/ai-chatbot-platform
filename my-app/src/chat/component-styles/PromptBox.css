@@ -20,6 +20,10 @@
     border-radius: clamp(5px, 2vw, 50px);
     border: 1px gray solid;
     transition: all ease-in-out 0.5s;
+    padding: 10px 25px;
+    resize: none;
+    scrollbar-width: thin;
+    scroll-behavior: smooth;
 }
 
 .prompt-box textarea:focus{
@@ -48,4 +52,22 @@
     background-color: aliceblue;
     transform: scale(1.02) translateY(-5px);
     box-shadow: 0 0 0 3px rgba(221, 160, 221, 0.15);
+}
+
+.prompt-box textarea{
+    /* Firefox: set thumb color first, then track color to transparent */
+    scrollbar-color: #888 transparent; 
+    scroll-margin: 0 10px 0 0;
+}
+
+/* Chrome, Edge, and Safari */
+.prompt-box textarea::-webkit-scrollbar {
+    width: 8px; /* Required to make custom styling take effect */
+    height: 8px;
+    background-color: transparent; /* Removes track background */
+}
+
+.prompt-box textarea::-webkit-scrollbar-thumb {
+    background-color: #888; /* Color of the scroll draggable handle */
+    border-radius: 4px;
 }
